@@ -23,21 +23,22 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-        
+
             ->default()
             ->id('admin')
             ->path('admin')
             ->login()
             ->colors([
-            'danger' => Color::Rose,
-            'gray' => Color::Gray,
-            'info' => Color::Blue,
-            'primary' => Color::Indigo,
-            'success' => Color::Emerald,
-            'warning' => Color::Orange,
+                'danger' => Color::Rose,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
+                'primary' => Color::Indigo,
+                'success' => Color::Emerald,
+                'warning' => Color::Orange,
             ])
-            ->favicon('image/icon.png')
-            ->brandLogo('image/—Pngtree—assasin gaming logo with sword_8209331.png')
+            ->favicon(asset('image/assas.png'))
+            ->brandLogo('image/assas.png')
+            //->brandLogoHeight('1rem')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
