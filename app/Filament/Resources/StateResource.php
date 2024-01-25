@@ -95,7 +95,7 @@ class StateResource extends Resource
            Section::make('State Info')
            ->schema([
             TextEntry::make('country.name'),
-            TextEntry::make('name')->label('state name'),
+            TextEntry::make('state.name')->label('state name'),
            ])
         ]);
 }

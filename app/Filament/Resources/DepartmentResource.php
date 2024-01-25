@@ -81,7 +81,7 @@ class DepartmentResource extends Resource
                Section::make('Department Info')
                ->schema([
                 TextEntry::make('name'),
-                TextEntry::make('employees_count')->label('Employee'),
+                TextEntry::make('employees.id')->label('Employee'),
                ])
             ]);
     }
