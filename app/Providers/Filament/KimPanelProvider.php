@@ -28,8 +28,10 @@ class KimPanelProvider extends PanelProvider
             ->colors([
                 'primary' => Color::Amber,
             ])
-            ->favicon('C:\Users\user\management-dashboard\image\icon.png')
-            ->discoverResources(in: app_path('Filament/Kim/Resources'), for: 'App\\Filament\\Kim\\Resources')
+            ->favicon(asset('image/assas.png'))
+            ->brandLogo('image/assas.png')
+            ->brandLogoHeight('5rem')
+            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Kim/Pages'), for: 'App\\Filament\\Kim\\Pages')
             ->pages([
                 Pages\Dashboard::class,

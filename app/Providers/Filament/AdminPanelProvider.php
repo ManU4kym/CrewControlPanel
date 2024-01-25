@@ -29,16 +29,18 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'danger' => Color::Rose,
+                /* 'danger' => Color::Rose,
                 'gray' => Color::Gray,
                 'info' => Color::Blue,
                 'primary' => Color::Indigo,
                 'success' => Color::Emerald,
-                'warning' => Color::Orange,
+                'warning' => Color::Orange, */
+                'primary' => Color::Amber,
             ])
+            ->font('cursive')
             ->favicon(asset('image/assas.png'))
             ->brandLogo('image/assas.png')
-            //->brandLogoHeight('1rem')
+            ->brandLogoHeight('70px')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
