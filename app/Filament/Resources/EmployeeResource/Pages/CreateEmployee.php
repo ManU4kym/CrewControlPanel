@@ -11,7 +11,6 @@ class CreateEmployee extends CreateRecord
 {
     protected static string $resource = EmployeeResource::class;
 
-    
 
     protected function getCreatedNotification():?Notification {
         return Notification::make()

@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources;
 
-use table;
+
 use Carbon\Carbon;
 use Filament\Forms;
 use App\Models\City;
@@ -70,13 +70,10 @@ class EmployeeResource extends Resource
         return static::getModel()::count();
     }
 
-<<<<<<< Updated upstream
     /* public static function getNavigationBadgeColor(): string|array|null {
         return 'info';
     } */
 
-=======
->>>>>>> Stashed changes
     public static function form(Form $form): Form
     {
         return $form
