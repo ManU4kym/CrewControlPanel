@@ -69,10 +69,13 @@ class EmployeeResource extends Resource
         return static::getModel()::count();
     }
 
+<<<<<<< Updated upstream
     /* public static function getNavigationBadgeColor(): string|array|null {
         return 'info';
     } */
 
+=======
+>>>>>>> Stashed changes
     public static function form(Form $form): Form
     {
         return $form
