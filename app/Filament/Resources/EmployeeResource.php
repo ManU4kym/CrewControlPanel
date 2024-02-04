@@ -55,6 +55,20 @@ class EmployeeResource extends Resource
         ];
     }
 
+    public static function getGlobalSearchResultDetails(Model $record): array {
+        return [
+            'Country' => $record->country->name
+        ];
+    }
+
+    public static function getGlobalSearchEloquentQuery(): Builder {
+        return parent::getGlobalSearchEloquentQuery()->with(['country']);
+    }
+
+    public static function getNavigationBadge(): string {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
