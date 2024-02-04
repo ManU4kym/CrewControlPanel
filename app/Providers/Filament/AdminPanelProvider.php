@@ -48,6 +48,11 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Green,
             ])
             ->font('cursive')
+            ->navigationGroups([
+                'Employee Management',
+                'System Management',
+                'User Management',
+            ])
             ->favicon(asset('image/assas.png'))
             ->brandLogo('image/assas.png')
             ->brandLogoHeight('70px')
