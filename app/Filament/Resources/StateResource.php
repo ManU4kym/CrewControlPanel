@@ -2,19 +2,21 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\StateResource\Pages;
-use App\Filament\Resources\StateResource\RelationManagers;
-use App\Models\State;
 use Filament\Forms;
+use Filament\Tables;
+use App\Models\State;
 use Filament\Forms\Form;
-use Filament\Infolists\Components\Section;
-use Filament\Infolists\Components\TextEntry;
+use Filament\Tables\Table;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Infolists\Components\Section;
+use Filament\Infolists\Components\TextEntry;
+use App\Filament\Resources\StateResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\StateResource\RelationManagers;
+use App\Filament\Resources\StateResource\RelationManagers\CitiesRelationManager;
+use App\Filament\Resources\CountryResource\RelationManagers\EmployeesRelationManager;
 
 class StateResource extends Resource
 {
@@ -103,7 +105,8 @@ class StateResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CitiesRelationManager::class,
+            EmployeesRelationManager::class,
         ];
     }
     

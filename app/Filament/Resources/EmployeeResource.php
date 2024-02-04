@@ -20,6 +20,7 @@ use Filament\Tables\Filters\Filter;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\DatePicker;
 use Filament\Tables\Filters\SelectFilter;
@@ -39,6 +40,20 @@ class EmployeeResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     protected static ?string $navigationGroup = 'Employee Management';
+
+    protected static ?string $recordTitleAttribute = 'first_name';
+
+    public static function getGlobalSearchResultTitle(Model $record): string {
+        return $record->last_name;
+    }
+
+    public static function getGloballySearchableAttributes(): array {
+        return [
+            'first_name',
+            'last_name',
+            'middle_name'
+        ];
+    }
 
     public static function form(Form $form): Form
     {

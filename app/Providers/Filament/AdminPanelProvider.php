@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Pages\City;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\Widgets;
@@ -54,6 +55,8 @@ class AdminPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                
+                
 
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
