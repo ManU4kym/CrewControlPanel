@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use table;
 use Carbon\Carbon;
 use Filament\Forms;
 use App\Models\City;
@@ -70,13 +71,10 @@ class EmployeeResource extends Resource
     }
 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     /* public static function getNavigationBadgeColor(): string|array|null {
         return 'info';
     } */
 
-=======
->>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     public static function form(Form $form): Form
