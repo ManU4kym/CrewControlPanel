@@ -219,6 +219,7 @@ class EmployeeResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make()->successNotiicationTitle('Employee Deleted')
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

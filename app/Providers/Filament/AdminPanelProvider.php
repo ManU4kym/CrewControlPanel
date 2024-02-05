@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use Pages\City;
 use Filament\Pages;
 use Filament\Panel;
+use App\Models\Team;
 use Filament\Widgets;
 use Filament\PanelProvider;
 use Resources\CityResource;
@@ -82,6 +83,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->tenant(Team::class);
     }
 }
