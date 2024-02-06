@@ -16,9 +16,12 @@ use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use App\Filament\Resources\StateResource;
 use Filament\Http\Middleware\Authenticate;
+use Filament\Pages\Tenancy\RegisterTenant;
 use App\Filament\Resources\CountryResource;
 use App\Filament\Resources\EmployeeResource;
 use App\Filament\Resources\DepartmentResource;
+use App\Filament\Pages\Tenancy\EditTeamProfile;
+use App\Filament\Pages\Tenancy\RegisterTeam;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -26,6 +29,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Pages\Tenancy\EditTenantProfile;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
@@ -55,8 +59,9 @@ class AdminPanelProvider extends PanelProvider
                 'User Management',
             ])
             ->favicon(asset('image/assas.png'))
-            ->brandLogo('image/assas.png')
-            ->brandLogoHeight('70px')
+            //->brandLogo('image/assas.png')
+            //->brandLogoHeight('70px')
+            ->brandName('Teams ☠☠☠')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -84,6 +89,8 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->tenant(Team::class);
+            ->tenant(Team::class, ownershipRelationship: 'team', slugAttribute: 'slug')
+            ->tenantRegistration(RegisterTeam::class)
+            ->tenantProfile(EditTeamProfile::class);
     }
 }

@@ -25,4 +25,8 @@ class Employee extends Model
     public function state ():BelongsTo {
         return $this->belongsTo(State::class);
     }
+
+    public function team():BelongsTo {
+        return $this->belongsTo(Team::class);
+    }
 }
